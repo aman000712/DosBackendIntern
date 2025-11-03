@@ -1,0 +1,61 @@
+import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { ConfigModule } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { FileSystemStoredFile, NestjsFormDataModule } from 'nestjs-form-data';
+import { FqasectionModule } from './fqasection/fqasection.module';
+import { FileuploadModule } from './fileupload/fileupload.module';
+import { HomesectionModule } from './homesection/homesection.module';
+import { Fqasection } from './fqasection/entities/fqasection.entity';
+import { Fileupload } from './fileupload/entities/fileupload.entity';
+import { Homesection } from './homesection/entities/homesection.entity';
+
+@Module({
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '.env',
+    }),
+
+    NestjsFormDataModule.config({
+      storage: FileSystemStoredFile,
+      fileSystemStoragePath: 'uploads',
+      isGlobal: true,
+      autoDeleteFile: false,
+      limits: {
+        files: 10,
+        fileSize: 1024 * 1024 * 50,
+      },
+      cleanupAfterSuccessHandle: false,
+    }),
+
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      port: 3306,
+      host: 'localhost',
+      username: 'root',
+      password: 'Amanxtteri0007@',
+      database: 'dos',
+      // autoLoadEntities: true,
+      entities: [
+        Fqasection,
+        Fileupload,
+        Homesection
+      ],
+      extra: {
+        connectTimeout: 3000,
+      },
+      synchronize: true,
+    }),
+
+    FqasectionModule,
+
+    FileuploadModule,
+
+    HomesectionModule,
+  ],
+  controllers: [AppController],
+  providers: [AppService],
+})
+export class AppModule {}
