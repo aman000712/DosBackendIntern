@@ -10,6 +10,10 @@ import { HomesectionModule } from './homesection/homesection.module';
 import { Fqasection } from './fqasection/entities/fqasection.entity';
 import { Fileupload } from './fileupload/entities/fileupload.entity';
 import { Homesection } from './homesection/entities/homesection.entity';
+import { OurstaffsectionModule } from './ourstaffsection/ourstaffsection.module';
+import { AddblogModule } from './addblog/addblog.module';
+import { BannersectionModule } from './bannersection/bannersection.module';
+import { Ourstaffsection } from './ourstaffsection/entities/ourstaffsection.entity';
 
 @Module({
   imports: [
@@ -39,9 +43,11 @@ import { Homesection } from './homesection/entities/homesection.entity';
       database: 'dos',
       // autoLoadEntities: true,
       entities: [
-        Fqasection,
         Fileupload,
-        Homesection
+        Fqasection,
+        Homesection,
+        Ourstaffsection,
+
       ],
       extra: {
         connectTimeout: 3000,
@@ -54,6 +60,12 @@ import { Homesection } from './homesection/entities/homesection.entity';
     FileuploadModule,
 
     HomesectionModule,
+
+    OurstaffsectionModule,
+
+    AddblogModule,
+
+    BannersectionModule,
   ],
   controllers: [AppController],
   providers: [AppService],
