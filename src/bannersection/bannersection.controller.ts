@@ -12,23 +12,19 @@ export class BannersectionController {
     return this.bannersectionService.create(createBannersectionDto);
   }
 
-  @Get()
-  findAll() {
+  @Get('pages/:page')
+  findAll(@Param('page') page: string) {
     return this.bannersectionService.findAll();
   }
 
-  @Get(':id')
+  @Get(':id/id')
   findOne(@Param('id') id: string) {
-    return this.bannersectionService.findOne(+id);
+    return this.bannersectionService.findOne(id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateBannersectionDto: UpdateBannersectionDto) {
-    return this.bannersectionService.update(+id, updateBannersectionDto);
+  @Patch('page/:page')
+  update(@Param('page') id: string, @Body() updateBannersectionDto: UpdateBannersectionDto) {
+    return this.bannersectionService.update(id, updateBannersectionDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.bannersectionService.remove(+id);
-  }
 }

@@ -19,16 +19,16 @@ export class AddblogController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.addblogService.findOne(+id);
+    return this.addblogService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateAddblogDto: UpdateAddblogDto) {
-    return this.addblogService.update(+id, updateAddblogDto);
+    return this.addblogService.update(id, updateAddblogDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.addblogService.remove(+id);
+    return this.addblogService.remove(id);
   }
 }

@@ -14,6 +14,8 @@ import { OurstaffsectionModule } from './ourstaffsection/ourstaffsection.module'
 import { AddblogModule } from './addblog/addblog.module';
 import { BannersectionModule } from './bannersection/bannersection.module';
 import { Ourstaffsection } from './ourstaffsection/entities/ourstaffsection.entity';
+import { Addblog } from './addblog/entities/addblog.entity';
+import { Bannersection } from './bannersection/entities/bannersection.entity';
 
 @Module({
   imports: [
@@ -47,6 +49,8 @@ import { Ourstaffsection } from './ourstaffsection/entities/ourstaffsection.enti
         Fqasection,
         Homesection,
         Ourstaffsection,
+        Addblog,
+        Bannersection,
 
       ],
       extra: {
