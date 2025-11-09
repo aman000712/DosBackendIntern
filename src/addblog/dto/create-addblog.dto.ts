@@ -15,7 +15,7 @@ export class CreateAddblogDto {
     @ApiProperty()
     imageid: any
 
-    @Column()
+    @ApiProperty()
     category: string
 
 

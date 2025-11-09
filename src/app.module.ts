@@ -41,8 +41,8 @@ import { Bannersection } from './bannersection/entities/bannersection.entity';
       port: 3306,
       host: 'localhost',
       username: 'root',
-      password: 'Amanxtteri0007@',
-      database: 'dos',
+      password: '123456',
+      database: 'resortbackend',
       // autoLoadEntities: true,
       entities: [
         Fileupload,
