@@ -14,7 +14,7 @@ export class BannersectionController {
 
   @Get('pages/:page')
   findAll(@Param('page') page: string) {
-    return this.bannersectionService.findAll();
+    return this.bannersectionService.findAll(page);
   }
 
   @Get(':id/id')
