@@ -16,6 +16,12 @@ import { BannersectionModule } from './bannersection/bannersection.module';
 import { Ourstaffsection } from './ourstaffsection/entities/ourstaffsection.entity';
 import { Addblog } from './addblog/entities/addblog.entity';
 import { Bannersection } from './bannersection/entities/bannersection.entity';
+import { AddcourseModule } from './addcourse/addcourse.module';
+import { OurplacementpartnersModule } from './ourplacementpartners/ourplacementpartners.module';
+import { SucessstoriesModule } from './sucessstories/sucessstories.module';
+import { Ourplacementpartner } from './ourplacementpartners/entities/ourplacementpartner.entity';
+import { Sucessstory } from './sucessstories/entities/sucessstory.entity';
+import { Addcourse } from './addcourse/entities/addcourse.entity';
 
 @Module({
   imports: [
@@ -51,6 +57,10 @@ import { Bannersection } from './bannersection/entities/bannersection.entity';
         Ourstaffsection,
         Addblog,
         Bannersection,
+        Ourplacementpartner,
+        Sucessstory,
+        Addcourse,
+        
 
       ],
       extra: {
@@ -70,6 +80,12 @@ import { Bannersection } from './bannersection/entities/bannersection.entity';
     AddblogModule,
 
     BannersectionModule,
+
+    AddcourseModule,
+
+    OurplacementpartnersModule,
+
+    SucessstoriesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
